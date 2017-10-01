@@ -146,7 +146,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseDialogWindow.cpp" />
+    <ClCompile Include="GameField.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuWindow.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseDialogWindow.h" />
+    <ClInclude Include="GameField.h" />
+    <ClInclude Include="MenuWindow.h" />
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Sudoku.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
