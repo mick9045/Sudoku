@@ -19,6 +19,11 @@ namespace Sudoku
 		return _field[y][x];
 	}
 
+	int GameField::Set(int x, int y, int value)
+	{
+		return _field[y][x] = value;
+	}
+
 	bool GameField::IsGuessed(int x, int y)
 	{
 		return _deleted[y][x];
@@ -197,7 +202,7 @@ namespace Sudoku
 			for (int j = 0; j < Size(); j++)
 			{
 				_deleted[i][j] = false;
-				_field[i][j] = 0;
+				_field[i][j] = true;
 			}
 		}
 		Initialize();

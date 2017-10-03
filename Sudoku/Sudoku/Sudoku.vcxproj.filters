@@ -36,6 +36,9 @@
     <ClCompile Include="MenuWindow.cpp">
       <Filter>Source Files\dialog</Filter>
     </ClCompile>
+    <ClCompile Include="NumberSelectWindow.cpp">
+      <Filter>Source Files\dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files\dialog</Filter>
     </ClInclude>
     <ClInclude Include="MenuWindow.h">
+      <Filter>Header Files\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberSelectWindow.h">
       <Filter>Header Files\dialog</Filter>
     </ClInclude>
   </ItemGroup>

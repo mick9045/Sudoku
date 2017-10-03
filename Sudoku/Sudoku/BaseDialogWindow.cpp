@@ -114,10 +114,6 @@ namespace Sudoku
 
 	HWND BaseDialogWindow::hWindow()
 	{
-		if (_hwnd == nullptr)
-		{
-			throw std::exception("window is not created");
-		}
 		return _hwnd;
 	}
 

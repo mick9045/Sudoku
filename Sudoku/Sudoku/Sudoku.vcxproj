@@ -151,12 +151,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="NumberSelectWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
     <ClInclude Include="GameField.h" />
     <ClInclude Include="MenuWindow.h" />
     <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="NumberSelectWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>

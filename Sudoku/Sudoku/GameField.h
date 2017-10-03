@@ -9,7 +9,8 @@ namespace Sudoku
 		GameField();
 		~GameField();
 		int Get(int x, int y);
-		bool IsGuessed(int i, int j);
+		int Set(int x, int y, int value);
+		bool IsGuessed(int x, int y);
 	protected:
 		void Initialize();
 

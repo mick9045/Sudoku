@@ -7,6 +7,7 @@ namespace Sudoku
 	GameWindow::GameWindow()
 		:BaseDialogWindow(IDD_DIALOG_MAIN)
 	{
+		_selectedIndex = { -1, -1 };
 	}
 
 
@@ -21,6 +22,11 @@ namespace Sudoku
 			HANDLE_MSG(hwnd, WM_CLOSE, Cls_OnClose);
 			HANDLE_MSG(hwnd, WM_COMMAND, Cls_OnCommand);
 			HANDLE_MSG(hwnd, WM_INITDIALOG, Cls_OnInitDialog);
+			HANDLE_MSG(hwnd, WM_PARENTNOTIFY, Cls_OnParentNotify);
+		case WM_NUMBER_SELECTED:
+			NumberSelected();
+			break;
+
 		default:
 			break;
 		}
@@ -31,17 +37,23 @@ namespace Sudoku
 	{
 		Close();
 	}
+
 	VOID GameWindow::Cls_OnCommand(HWND hwnd, INT id, HWND hwndCtl, UINT codeNotify)
 	{
 		if (codeNotify == BN_CLICKED)
 		{
-			switch (id)
+			_selectedIndex = FindButton(hwndCtl);
+			if (!_gameField.IsGuessed(_selectedIndex.x, _selectedIndex.y))
 			{
-			default:
-				break;
+				return;
 			}
+			_numberSelectWindow.Create(hWindow());
+			POINT p;
+			GetCursorPos(&p);
+			_numberSelectWindow.SetPos(p.x, p.y);
 		}
 	}
+
 	BOOL GameWindow::Cls_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 	{
 		int buttonSize = 45;
@@ -72,5 +84,39 @@ namespace Sudoku
 		}
 		SetFocus(hWindow());
 		return FALSE;
+	}
+
+	POINT GameWindow::FindButton(HWND hWindow)
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			for (int j = 0; j < 9; j++)
+			{
+				if (_hButton[i][j] == hWindow)
+				{
+					return{ j, i };
+				}
+			}
+		}
+		return{ -1, -1 };
+	}
+
+	void GameWindow::Cls_OnParentNotify(HWND hwnd, UINT msg, HWND hwndChild, int idChild)
+	{
+	}
+
+	void GameWindow::NumberSelected()
+	{
+		if (_selectedIndex.x >= 0)
+		{
+			_gameField.Set(_selectedIndex.x,_selectedIndex.y, _numberSelectWindow.SelectedNumber());
+
+			SetWindowText(
+				_hButton[_selectedIndex.y][_selectedIndex.x],
+				to_tstring(_numberSelectWindow.SelectedNumber()).c_str()
+			);
+			_selectedIndex = { -1, -1 };
+		}
+		
 	}
 }
