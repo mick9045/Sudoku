@@ -52,9 +52,7 @@ namespace Sudoku
 		case IDC_BUTTON_NEWGAME:
 		{
 			auto gameWindow = new GameWindow();
-			ShowWindow(hWindow(), SW_HIDE);
 			gameWindow->CreateModal(hWindow());
-			ShowWindow(hWindow(), SW_SHOW);
 			delete gameWindow;
 			_nResult == IDOK;
 			break;

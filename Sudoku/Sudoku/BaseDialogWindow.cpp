@@ -1,5 +1,6 @@
 #include "BaseDialogWindow.h"
 #include "exception"
+#include "resource.h"
 
 namespace Sudoku
 {
@@ -83,9 +84,9 @@ namespace Sudoku
 			SetWindowLong(hwnd, GWL_USERDATA, lParam); // setting window user data as window pointer
 			reinterpret_cast<BaseDialogWindow *>(lParam)->_hwnd = hwnd; // setting dialog box handle
 
-																		//HICON hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(MAINICON));
-																		//SendMessage(hwnd, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(hIcon));
-																		//SendMessage(hwnd, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(hIcon));
+			HICON hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
+			SendMessage(hwnd, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(hIcon));
+			SendMessage(hwnd, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(hIcon));
 			break;
 		}
 		default:

@@ -8,6 +8,7 @@ namespace Sudoku
 	GameField::GameField()
 	{
 		Reset();
+		srand(time(0));
 	}
 
 	GameField::~GameField()
