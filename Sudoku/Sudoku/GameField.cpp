@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <exception>
-
+#include <vector>
 namespace Sudoku
 {
 	GameField::GameField()
@@ -59,21 +59,20 @@ namespace Sudoku
 			sum = 0;
 		}
 
-		for (int i = 0; i < Size(); i++)
+		int counter = 0;
+		for (int i = 0; i < 9; i++)
 		{
-			int x = (i % _n);
-			int y = (i / _n);
-			for (int y2 = 0; y2 < _n; y2++)
+			for (int j = 0; j < 9; j++, counter++)
 			{
-				for (int x2 = 0; x2 < _n; x2++)
-				{
-					sum += _field[y + y2 * _n][x + x2 * _n];
-				}
+				sum += _field[j / 3 + (i / 3) * 3][j % 3 + (i % 3) * 3];
 			}
-			if (sum != target)
+		
+			if (counter == 8)
 			{
-				return false;
+				if (sum != target)
+					return false;
 			}
+			counter = 0;
 			sum = 0;
 		}
 
