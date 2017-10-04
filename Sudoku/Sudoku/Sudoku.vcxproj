@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseDialogWindow.cpp" />
+    <ClCompile Include="ComplexitySelectWindow.cpp" />
     <ClCompile Include="GameField.cpp" />
     <ClCompile Include="InstructionsWindow.cpp" />
     <ClCompile Include="main.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
+    <ClInclude Include="ComplexitySelectWindow.h" />
     <ClInclude Include="GameField.h" />
     <ClInclude Include="InstructionsWindow.h" />
     <ClInclude Include="MenuWindow.h" />

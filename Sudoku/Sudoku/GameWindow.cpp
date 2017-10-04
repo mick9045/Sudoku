@@ -4,8 +4,8 @@
 
 namespace Sudoku
 {
-	GameWindow::GameWindow()
-		:BaseDialogWindow(IDD_DIALOG_MAIN)
+	GameWindow::GameWindow(int complexity)
+		:BaseDialogWindow(IDD_DIALOG_MAIN), _gameField(complexity)
 	{
 		_selectedIndex = { -1, -1 };
 		_hbrBorder = CreateSolidBrush(RGB(13, 71, 161));

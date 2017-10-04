@@ -3,6 +3,7 @@
 #include "resource.h"
 #include "GameWindow.h"
 #include "InstructionsWindow.h"
+#include "ComplexitySelectWindow.h"
 
 namespace Sudoku
 {
@@ -51,9 +52,11 @@ namespace Sudoku
 			break;
 		case IDC_BUTTON_NEWGAME:
 		{
-			auto gameWindow = new GameWindow();
-			gameWindow->CreateModal(hWindow());
-			delete gameWindow;
+			auto comlexitySelectWindow = new ComplexitySelectWindow();
+			ShowWindow(hWindow(), SW_SHOWMINIMIZED);
+			comlexitySelectWindow->CreateModal(hWindow());
+			ShowWindow(hWindow(), SW_RESTORE);
+			delete comlexitySelectWindow;
 			_nResult == IDOK;
 			break;
 		}

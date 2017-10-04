@@ -6,7 +6,7 @@ namespace Sudoku
 	class GameField
 	{
 	public:
-		GameField();
+		GameField(int complexity = 4);
 		~GameField();
 		int Get(int x, int y);
 		int Set(int x, int y, int value);
@@ -28,6 +28,7 @@ namespace Sudoku
 		int Size();
 	private:
 		const int _n = 3;
+		int _complexity;
 		int _field[9][9];
 		bool _deleted[9][9];
 	};

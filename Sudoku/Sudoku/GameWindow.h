@@ -9,7 +9,7 @@ namespace Sudoku
 		public BaseDialogWindow
 	{
 	public:
-		GameWindow();
+		GameWindow(int complexity);
 		~GameWindow();
 
 		// Inherited via BaseDialogWindow

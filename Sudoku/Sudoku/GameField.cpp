@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <exception>
 #include <vector>
+
 namespace Sudoku
 {
-	GameField::GameField()
+	GameField::GameField(int complexity)
 	{
+		_complexity = complexity;
 		Reset();
 		srand(time(0));
 	}
@@ -122,7 +124,7 @@ namespace Sudoku
 
 	void GameField::RemoveRandomCells()
 	{
-		int removeCount = 4;
+		int removeCount = _complexity;
 		for (int i = 0; i < Size(); i++)
 		{
 			for (int j = 0; j < removeCount; j++)

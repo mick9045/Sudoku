@@ -42,6 +42,9 @@
     <ClCompile Include="InstructionsWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ComplexitySelectWindow.cpp">
+      <Filter>Source Files\dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="InstructionsWindow.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexitySelectWindow.h">
+      <Filter>Header Files\dialog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
