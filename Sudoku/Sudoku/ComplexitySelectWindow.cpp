@@ -38,8 +38,8 @@ namespace Sudoku
 		}
 		if (gameWindow != NULL)
 		{
-			ShowWindow(hWindow(), SW_HIDE);
-			gameWindow->CreateModal();
+			ShowWindow(hWindow(), SW_SHOWMINIMIZED);
+			gameWindow->CreateModal(hWindow());
 			delete gameWindow;
 			ShowWindow(hWindow(), SW_SHOW);
 			Close();
