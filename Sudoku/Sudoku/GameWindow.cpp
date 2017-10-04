@@ -8,7 +8,7 @@ namespace Sudoku
 		:BaseDialogWindow(IDD_DIALOG_MAIN), _gameField(complexity)
 	{
 		_selectedIndex = { -1, -1 };
-		_hbrBorder = CreateSolidBrush(RGB(13, 71, 161));
+		_hbrBorder = CreateSolidBrush(RGB(255, 0, 0));
 	}
 
 
@@ -81,7 +81,7 @@ namespace Sudoku
 		int buttonSize = 45;
 		HWND h;
 		LPTCH lptchText = new TCHAR[12];
-		SetSize(470, 600);
+		SetSize(467, 500);
 
 		for (int i = 0; i < 9; i++)
 		{
