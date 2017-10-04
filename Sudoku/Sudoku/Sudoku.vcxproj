@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="BaseDialogWindow.cpp" />
     <ClCompile Include="GameField.cpp" />
+    <ClCompile Include="InstructionsWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="GameWindow.cpp" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="BaseDialogWindow.h" />
     <ClInclude Include="GameField.h" />
+    <ClInclude Include="InstructionsWindow.h" />
     <ClInclude Include="MenuWindow.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="NumberSelectWindow.h" />

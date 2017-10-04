@@ -2,6 +2,7 @@
 #include <Windowsx.h>
 #include "resource.h"
 #include "GameWindow.h"
+#include "InstructionsWindow.h"
 
 namespace Sudoku
 {
@@ -52,13 +53,19 @@ namespace Sudoku
 		{
 			auto gameWindow = new GameWindow();
 			ShowWindow(hWindow(), SW_HIDE);
-			gameWindow->CreateModal();
+			gameWindow->CreateModal(hWindow());
 			ShowWindow(hWindow(), SW_SHOW);
 			delete gameWindow;
 			_nResult == IDOK;
-		}
-
 			break;
+		}
+		case IDC_BUTTON_RULES:
+		{
+			auto rulesWindow = new InstructionsWindow();
+			rulesWindow->CreateModal(hWindow());
+			delete rulesWindow;
+			break;
+		}
 		default:
 			break;
 		}

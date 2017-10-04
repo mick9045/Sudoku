@@ -10,7 +10,9 @@ namespace Sudoku
 		~GameField();
 		int Get(int x, int y);
 		int Set(int x, int y, int value);
-		bool IsGuessed(int x, int y);
+		bool IsDeleted(int x, int y);
+		bool IsSolved();
+		void Reset();
 	protected:
 		void Initialize();
 
@@ -23,7 +25,6 @@ namespace Sudoku
 		void SwapColumnsGlobal();
 		void SwapCells(int i1, int j1, int i2, int j2);
 		void SwapLines(int line1, int line2);
-		void Reset();
 		int Size();
 	private:
 		const int _n = 3;

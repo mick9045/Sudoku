@@ -24,9 +24,60 @@ namespace Sudoku
 		return _field[y][x] = value;
 	}
 
-	bool GameField::IsGuessed(int x, int y)
+	bool GameField::IsDeleted(int x, int y)
 	{
 		return _deleted[y][x];
+	}
+
+	bool GameField::IsSolved()
+	{
+		int target = 45;
+		int sum = 0;
+		for (int i = 0; i < Size(); i++)
+		{
+			for (int j = 0; j < Size(); j++)
+			{
+				sum += _field[i][j];
+			}
+			if (sum != target)
+			{
+				return false;
+			}
+			sum = 0;
+		}
+
+		for (int i = 0; i < Size(); i++)
+		{
+			for (int j = 0; j < Size(); j++)
+			{
+				sum += _field[j][i];
+			}
+			if (sum != target)
+			{
+				return false;
+			}
+			sum = 0;
+		}
+
+		for (int i = 0; i < Size(); i++)
+		{
+			int x = (i % _n);
+			int y = (i / _n);
+			for (int y2 = 0; y2 < _n; y2++)
+			{
+				for (int x2 = 0; x2 < _n; x2++)
+				{
+					sum += _field[y + y2 * _n][x + x2 * _n];
+				}
+			}
+			if (sum != target)
+			{
+				return false;
+			}
+			sum = 0;
+		}
+
+		return true;
 	}
 
 	void GameField::Initialize()
