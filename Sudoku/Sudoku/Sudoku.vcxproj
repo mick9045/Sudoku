@@ -168,7 +168,7 @@
     <ResourceCompile Include="Sudoku.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Pictures\icons\Alecive-Flatwoken-Apps-Sudoku.ico" />
+    <Image Include="Icon\Alecive-Flatwoken-Apps-Sudoku.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -75,7 +75,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Pictures\icons\Alecive-Flatwoken-Apps-Sudoku.ico">
+    <Image Include="Icon\Alecive-Flatwoken-Apps-Sudoku.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
